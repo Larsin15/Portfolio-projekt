@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tommy Larsin - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="logo">Tommy Larsin</h1>
+        <button class="menu-toggle">
+            <i class="fas fa-bars"></i>
+            <span class="sr-only">Meny</span>
+        </button>
+        <nav class="main-nav">
+            <a href="project.html">Project</a>
+            <a href="#about">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="hobby.html">Hobby</a>
+            <a href="#" class="contact-link">Kontakt</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About Section -->
+        
+
+        <section class="about-section" id="about">
+            <div class="about-content">
+                <h2>Dagsläget...</h2>
+                <p class="intro-text">Tommy är student med inriktning Javautvecklare på Teknikhögkolan i Göteborg, med ett kreativt sinne och förståelse för individens behov så löser han problemen utan att krångla till det.</p>
+                <p class="availability">Söker för nuvarande LIA och extraknäck.</p>
+            </div>
+            <div class="about-images">
+                <img src="Nova1.png" alt="Project 1">
+                <img src="Nova2.png" alt="Project 2">
+                <img src="Nova3.png" alt="Project 3">
+            </div>
+            <div class="skills-icons">
+                <div class="skill">
+                  <i class="fab fa-java"></i>
+                  <span class="tooltip">Java</span>
+                </div>
+                <div class="skill">
+                  <i class="fab fa-node-js"></i>
+                  <span class="tooltip">Node.js</span>
+                </div>
+                <div class="skill">
+                  <i class="fab fa-docker"></i>
+                  <span class="tooltip">Docker</span>
+                </div>
+                <div class="skill">
+                  <i class="fas fa-database"></i>
+                  <span class="tooltip">MongoDB</span>
+                </div>
+                <div class="skill">
+                  <i class="fab fa-js"></i>
+                  <span class="tooltip">JavaScript</span>
+                </div>
+                <div class="skill">
+                  <i class="fas fa-code"></i>
+                  <span class="tooltip">Spring Boot</span>
+                </div>
+                <div class="skill">
+                  <i class="fas fa-laptop-code"></i>
+                  <span class="tooltip">IntelliJ</span>
+                </div>
+                <div class="skill">
+                  <i class="fas fa-terminal"></i>
+                  <span class="tooltip">Maven</span>
+                </div>
+                <div class="skill">
+                  <i class="fas fa-code-branch"></i>
+                  <span class="tooltip">VS Code</span>
+                </div>
+              </div>
+        </section>
+
+        <section id="project" class="content-section">
+            <!-- Project content -->
+    
+        <section id="hobby" class="content-section">
+            <!-- Hobby content -->
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Tommy Larsin</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/tommy-larsin-b88036150/" target="_blank">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://github.com/Larsin15" target="_blank">
+                <i class="fab fa-github fa-2x"></i>
+            </a>
+            <a href="mailto:tommy.larsin@hotmail.com" target="_blank">
+                <i class="fas fa-envelope fa-2x"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Contact Model-->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-columns">
+                <div class="modal-description">
+                    <h3>Tjena!</h3>
+                    <p>Projekt som skulle passa mig?<br>Andra funderingar?</p>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i> +46 761 91 41 51
+                        <br>
+                        <i class="fas fa-map-marker-alt"></i> Göteborg, Sweden
+                    </div>
+                </div>
+                <form id="contactForm">
+                    <input type="text" placeholder="Namn" required>
+                    <input type="email" placeholder="E-post" required>
+                    <textarea placeholder="Meddelande" required></textarea>
+                    <button type="submit">Skicka</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
