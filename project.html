@@ -1,35 +1,158 @@
-<section class="content-section" id="projects">
-    <div class="section-header">
-        <h2>Mina Projekt</h2>
-        <p class="section-subtitle">Utvalda tekniska lösningar</p>
-    </div>
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tommy Larsin - Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+    <!-- Favicon links -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+</head>
+  <body>
+    <header class="main-header">
+      <h1 class="logo">Tommy Larsin</h1>
+      <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+        <span class="sr-only">Meny</span>
+      </button>
+      <nav class="main-nav">
+        <a href="index.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="#" class="contact-link">Kontakt</a>
+      </nav>
+    </header>
 
-    <div class="project-grid">
-        <div class="project-card">
-            <div class="project-image">
-                <img src="project1-thumb.jpg" alt="E-handelsplattform">
-            </div>
-            <h3>E-handelsplattform</h3>
-            <div class="tech-stack">
-                <i class="fab fa-java"></i>
-                <i class="fas fa-database"></i>
-                <i class="fab fa-js"></i>
-            </div>
-            <p>Fullstack-lösning med Spring Boot och React</p>
-            <a href="#" class="project-link">Se detaljer</a>
+    <main>
+      <section class="content-section" id="projects">
+        <div class="section-header">
+          <h2>Mina Projekt</h2>
+          <p class="section-subtitle">Utvalda tekniska lösningar</p>
         </div>
 
-        <div class="project-card">
+        <div class="project-grid">
+          <div class="project-card">
             <div class="project-image">
-                <img src="project2-thumb.jpg" alt="API Gateway">
+              <img src="StaySphere.png" alt="StaySphere" />
             </div>
-            <h3>API Gateway</h3>
+            <h3>StaySphere</h3>
             <div class="tech-stack">
-                <i class="fab fa-node-js"></i>
-                <i class="fab fa-docker"></i>
+              <i class="fab fa-java"></i>
+              <i class="fas fa-database"></i>
+              <i class="fab fa-js"></i>
+              <i class="fab fa-docker"></i>
             </div>
-            <p>Skalbar mikrotjänstarkitektur</p>
-            <a href="#" class="project-link">Github Repo</a>
+            <p>
+              Vi är en grupp på tre som gjort vår tolkning på hur vi skulle
+              vilja se en framtida uthyrningstjänst för hotel och privata
+              boenden i ett. Vi ska precis påbörja frontend delen av projektet.
+              Jag har främst ansvarat för booking samt availability delarna i
+              listing, men annars har vi som grupp jobbat mycket tajt
+              framförallt genom discord och code with me i IntelliJ.
+            </p>
+            <a
+              href="https://github.com/Larsin15/StaySphere-Project-Portfolio"
+              target="_blank"
+            >
+              <i class="fab fa-github fa-2x"></i>
+              <span>Repository</span>
+            </a>
+          </div>
         </div>
+      </section>
+
+      <section>
+        <div class="skills-icons">
+          <div class="skill">
+            <i class="fab fa-java"></i>
+            <span class="tooltip">Java</span>
+          </div>
+          <div class="skill">
+            <i class="fab fa-node-js"></i>
+            <span class="tooltip">Node.js</span>
+          </div>
+          <div class="skill">
+            <i class="fab fa-docker"></i>
+            <span class="tooltip">Docker</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-database"></i>
+            <span class="tooltip">MongoDB</span>
+          </div>
+          <div class="skill">
+            <i class="fab fa-js"></i>
+            <span class="tooltip">JavaScript</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code"></i>
+            <span class="tooltip">Spring Boot</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-laptop-code"></i>
+            <span class="tooltip">IntelliJ</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-terminal"></i>
+            <span class="tooltip">Maven</span>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code-branch"></i>
+            <span class="tooltip">VS Code</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>© 2025 Tommy Larsin</p>
+      <div class="social-links">
+        <a
+          href="https://www.linkedin.com/in/tommy-larsin-b88036150/"
+          target="_blank"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Larsin15" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="mailto:tommy.larsin@hotmail.com" target="_blank">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Contact Model-->
+    <div class="modal" id="contactModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-columns">
+          <div class="modal-description">
+            <h3>Tjena!</h3>
+            <p>Projekt som skulle passa mig?<br />Andra funderingar?</p>
+            <div class="contact-info">
+              <i class="fas fa-phone"></i> +46 761 91 41 51
+              <br />
+              <i class="fas fa-map-marker-alt"></i> Göteborg, Sweden
+            </div>
+          </div>
+          <form id="contactForm">
+            <input type="text" placeholder="Namn" required />
+            <input type="email" placeholder="E-post" required />
+            <textarea placeholder="Meddelande" required></textarea>
+            <button type="submit">Skicka</button>
+          </form>
+        </div>
+      </div>
     </div>
-</section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

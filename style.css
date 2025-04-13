@@ -1,8 +1,29 @@
-/* Reset */
+/* Prevent FOUC */
+.fa-icon-preload {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+html {
+  visibility: hidden;
+}
+
+html.wf-active {
+  visibility: visible;
+}
+
+/* Reset och basstilar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  vertical-align: -0.125em;
 }
 
 body {
@@ -20,10 +41,10 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 20vh); /* Adjust based on header/footer height */
+  min-height: calc(100vh - 20vh);
 }
 
-/* Header Layout */
+/* Header och navigation */
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -48,18 +69,6 @@ main {
   font-weight: bold;
 }
 
-.section-title {
-  font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
-}
-
-a,
-button,
-.menu-toggle {
-  padding: 0.8em 1.2em; /* Minimum touch target size */
-  min-width: 44px; /* WCAG recommended minimum */
-  min-height: 44px;
-}
-
 .menu-toggle {
   display: none;
   background: none;
@@ -77,18 +86,6 @@ button,
   transform: rotate(90deg);
 }
 
-/* Screen reader text */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 .main-nav {
   font-family: "Orbitron", sans-serif;
   display: flex;
@@ -104,7 +101,7 @@ button,
   padding: 1em 1.5em;
 }
 
-/* About Section */
+/* Huvudinnehållssektioner */
 .about-section {
   margin-top: 10vh;
   padding: 5% 5% 2%;
@@ -116,6 +113,30 @@ button,
   text-align: center;
 }
 
+.content-section {
+  padding: 4rem 5%;
+  position: relative;
+  min-height: 100vh;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-family: "Orbitron", sans-serif;
+  color: #b8ffcc;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  color: #7ae387;
+  font-size: 1.1rem;
+}
+
+/* Om-sektion */
 .about-content {
   font-family: "Shadows Into Light", cursive;
   max-width: 620px;
@@ -135,7 +156,6 @@ button,
   margin-top: 1rem;
 }
 
-/* Image Grid */
 .about-images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -152,6 +172,7 @@ button,
   border-radius: 6px;
 }
 
+/* Kompetenssektion */
 .skills-icons {
   display: flex;
   flex-wrap: wrap;
@@ -166,11 +187,13 @@ button,
 }
 
 .skill {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #7ae387;
   transition: transform 0.3s ease;
+  
 }
 
 .skill i {
@@ -184,19 +207,14 @@ button,
   color: #c9bfbf;
 }
 
-.skills-icons i:hover {
-  transform: scale(1.2);
-  color: #b8ffcc;
-}
-
 .skill:hover i {
   transform: scale(1.2);
   color: #b8ffcc;
 }
 
 .skill .tooltip {
-  position: relative 2rem;
-  bottom: 2rem;
+  position: relative;
+  bottom: 100%;
   color: #b8ffcc;
   padding: 4px 8px;
   border-radius: 4px;
@@ -205,12 +223,116 @@ button,
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: translateY(5px);
+  left: 50%;
+  transform: translateX(-50%) translateY(5px);
 }
 
 .skill:hover .tooltip {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(-50%) translateY(0);
+}
+
+.skills-icons::-webkit-scrollbar {
+  height: 4px;
+}
+
+.skills-icons::-webkit-scrollbar-thumb {
+  background-color: #7ae387;
+  border-radius: 2px;
+}
+
+/* Projektsektion */
+.project-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 2rem 5%;
+}
+
+.project-card {
+  background: #1a1a1a;
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  display: flex;
+  max-width: 400px;
+  max-height: 450px;
+  flex-direction: column;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.15);
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  aspect-ratio: 16/9;
+}
+
+.project-image img {
+  width: 100%;
+  height: 500%;
+  object-fit: fill;
+  transition: transform 0.3s ease;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+
+}
+
+.tech-stack i {
+  color: #7ae387 !important; 
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.project-card a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background: #7ae387;
+  color: #141414;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card a i {
+  transition: transform 0.3s ease;
+}
+
+.project-card a span {
+  position: absolute;
+  left: 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.project-card a:hover {
+  background: #b8ffcc;
+  padding-right: 2.5rem;
+}
+
+.project-card a:hover span {
+  opacity: 1;
+  transform: translateX(-220%);
+}
+
+.project-card a:hover i {
+  transform: translateX(10%);
 }
 
 /* Footer */
@@ -235,17 +357,17 @@ button,
   justify-content: center;
 }
 
-.social-links img {
-  width: 32px;
-  height: 32px;
+.social-links i {
+  color: #333;
   transition: transform 0.3s ease;
 }
 
-.social-links img:hover {
+.social-links i:hover {
   transform: scale(1.2);
 }
 
-/* Modal Styles */
+
+/* Modal */
 .modal h3 {
   font-size: clamp(1.2rem, 2.5vw + 0.8rem, 1.8rem);
 }
@@ -264,6 +386,7 @@ button,
 .modal.show {
   display: block;
 }
+
 
 .modal-content {
   background: #ffffff;
@@ -286,6 +409,7 @@ button,
   font-size: 1.5rem;
 }
 
+
 .modal-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -306,90 +430,23 @@ button,
   margin-right: 0.5rem;
 }
 
-.social-links i {
-  color: #333;
-  transition: transform 0.3s ease;
-}
 
-.social-links i:hover {
-  transform: scale(1.2);
-}
 
-/* Project Cards */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem 5%;
-}
 
-.project-card {
-  background: #1a1a1a;
-  border-radius: 10px;
-  padding: 1.5rem;
-  transition: transform 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.tech-stack {
-  display: flex;
-  gap: 1rem;
-  margin: 1rem 0;
-}
-
-/* Hobby Cards */
-.hobby-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  padding: 2rem 5%;
-}
-
-.hobby-card {
-  position: relative;
-  min-height: 200px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-/* Blog Posts */
-.blog-posts {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 5%;
-}
-
-.blog-post {
-  background: #1a1a1a;
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.post-meta {
-  display: flex;
-  justify-content: space-between;
-  color: #7ae387;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-}
-
+/* Media Queries */
 @media (max-width: 768px) {
-  /* Nav/Menu */
   .main-nav {
     position: fixed;
     flex-direction: column;
     gap: 0;
-    top: 70px;
+    top: 90px;
     right: -100%;
-    width: 80%;
-    height: calc(100vh - 70px);
+    width: 65%;
+    height: calc(36vh - 70px);
     transition: right 0.3s ease;
     padding: 1rem 0;
-    background: rgba(18, 20, 19, 0.98);
+    border-radius: 1.5%;
+    background: rgba(51, 65, 51, 0.98);
   }
 
   .main-nav.show {
@@ -425,9 +482,6 @@ button,
   }
 
   /* About Section */
-  .about-section {
-    grid-template-rows: 40vh auto;
-  }
 
   .about-images {
     grid-template-columns: repeat(3, 1fr);
@@ -437,7 +491,6 @@ button,
 
   .about-images img {
     height: 130px;
-    width: 100%;
   }
 
   /* Skills Section */
@@ -460,53 +513,15 @@ button,
     font-size: 1.8rem;
   }
 
-  .tooltip {
-    display: none !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .modal-columns {
-    grid-template-columns: 1fr;
-  }
-
-  .modal-description {
-    border-right: none;
-    padding-right: 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .modal-content {
-    padding: 1rem;
-    width: 95%;
-  }
-
-  .contact-info {
-    margin-top: 1rem;
-  }
-
-  .about-images img {
-    height: 150px;
-  }
 }
 
 @media (max-width: 480px) {
-  .skills-icons {
-    grid-template-columns: repeat(8, 1fr);
-    overflow-x: auto;
-    padding-bottom: 1rem;
-    scrollbar-width: thin;
-    scrollbar-color: #7ae387 transparent;
+  .section-header h2 {
+    font-size: 2rem;
   }
 
-  .skills-icons::-webkit-scrollbar {
-    height: 4px;
+  .project-card {
+    padding: 1rem;
   }
-
-  .skills-icons::-webkit-scrollbar-thumb {
-    background-color: #7ae387;
-    border-radius: 2px;
-  }
+  
 }
