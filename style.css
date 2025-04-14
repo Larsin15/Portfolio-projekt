@@ -1,4 +1,28 @@
 
+/* Force icon colors */
+.fab, .fas {
+  color: inherit !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Skill icons */
+.skill i {
+  color: #7ae387 !important;
+}
+
+.skill:hover i {
+  color: #b8ffcc !important;
+}
+
+/* Social links */
+.social-links a {
+  color: #333 !important;
+}
+
+.social-links a:hover i {
+  color: #b8ffcc !important;
+}
+
 /* Reset och basstilar */
 * {
   margin: 0;
@@ -167,7 +191,7 @@ main {
   font-size: 2.5rem;
 }
 
-.skills-icons svg {
+.skills-icons i {
   transition: transform 0.3s ease, color 0.3s ease;
   color: rgb(122, 227, 135);
 }
@@ -181,7 +205,7 @@ main {
   transition: transform 0.3s ease;
 }
 
-.skill svg {
+.skill i {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -192,7 +216,7 @@ main {
   color: #c9bfbf;
 }
 
-.skill:hover svg {
+.skill:hover i {
   transform: scale(1.2);
   color: #b8ffcc;
 }
@@ -272,7 +296,7 @@ main {
   flex-wrap: wrap;
 }
 
-.tech-stack svg {
+.tech-stack i {
   color: #7ae387 !important;
   font-size: 1.5rem;
   transition: color 0.3s ease;
@@ -342,12 +366,12 @@ main {
   justify-content: center;
 }
 
-.social-links svg {
+.social-links i {
   color: #333;
   transition: transform 0.3s ease;
 }
 
-.social-links svg:hover {
+.social-links i:hover {
   transform: scale(1.2);
 }
 
@@ -408,7 +432,7 @@ main {
   font-size: 0.9rem;
 }
 
-.contact-info svg {
+.contact-info i {
   margin-right: 0.5rem;
 }
 
@@ -488,7 +512,7 @@ main {
     margin: 0;
   }
 
-  .skill svg {
+  .skill i {
     font-size: 1.8rem;
   }
 }
