@@ -1,39 +1,8 @@
-
-/* Force icon colors */
-.fab, .fas {
-  color: inherit !important;
-  transition: all 0.3s ease !important;
-}
-
-/* Skill icons */
-.skill i {
-  color: #7ae387 !important;
-}
-
-.skill:hover i {
-  color: #b8ffcc !important;
-}
-
-/* Social links */
-.social-links a {
-  color: #333 !important;
-}
-
-.social-links a:hover i {
-  color: #b8ffcc !important;
-}
-
 /* Reset och basstilar */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.svg-inline--fa {
-  display: inline-block;
-  height: 1em;
-  vertical-align: -0.125em;
 }
 
 body {
@@ -297,7 +266,7 @@ main {
 }
 
 .tech-stack i {
-  color: #7ae387 !important;
+  color: #7ae387;
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }

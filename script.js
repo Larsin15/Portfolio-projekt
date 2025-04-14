@@ -58,21 +58,3 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
     alert('Tack för ditt meddelande!');
     modal.classList.remove('show');
 });
-
-// Font Awesome load detection
-document.addEventListener('DOMContentLoaded', () => {
-    Promise.all([
-      new Promise(resolve => {
-        if(document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(resolve);
-        } else {
-          resolve();
-        }
-      })
-    ]).then(() => {
-      document.documentElement.classList.add('wf-active');
-      document.querySelectorAll('.fa-icon-preload').forEach(el => {
-        el.style.visibility = 'visible';
-      });
-    });
-  });
