@@ -15,7 +15,7 @@ document.querySelectorAll('.main-nav a').forEach(link => {
     });
 });
 
-//Not using this as I only got 1 project
+//Not using this as I only got 1 project right now but might later on.
 document.querySelectorAll('.project').forEach(project => {
     const btn = document.createElement('button');
     btn.textContent = 'Visa mer';
