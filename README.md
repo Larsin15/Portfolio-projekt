@@ -4,6 +4,10 @@
 ## Beskrivning
 Portfolion presenterar mina färdigheter och tidigare projekt. Implementerat tekniker för att skapa en personlig och responsiv webbsida/portfolio som fungerar bra på både stationära datorer och mobila enheter.
 
+## FIGMA
+
+- https://www.figma.com/design/Wc41U660ACrWKfkP9kzZUV/Untitled?node-id=0-1&p=f&t=AMJCSK86fAaX9f43-0
+
 ## Struktur & Tekniker
 ### HTML-struktur
 - **Responsivt meny-system** med en hamburgermeny för mobiler.
