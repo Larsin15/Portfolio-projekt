@@ -71,6 +71,6 @@ Portfolion presenterar mina färdigheter och tidigare projekt. Implementerat tek
       alert('Tack!'); // Enkel feedback
     });
 
-**Skapare Email**
+- **Skapare Email**
     - skapare: Tommy Larsin
     - email: tommy.larsin@hotmail.com
