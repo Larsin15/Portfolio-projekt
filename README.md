@@ -6,7 +6,7 @@ Portfolion presenterar mina färdigheter och tidigare projekt. Implementerat tek
 
 ## FIGMA och Domän
 
-- https://larsin15.github.io/Portfolio-projekt/index.html (awaiting domain swap through cloudflare and STRATO for private domain www.larsin.se )
+- https://larsin.se
 - https://www.figma.com/design/Wc41U660ACrWKfkP9kzZUV/Untitled?node-id=0-1&p=f&t=AMJCSK86fAaX9f43-0
 
 ## Struktur & Tekniker
