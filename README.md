@@ -1,77 +1,96 @@
-# Portfolio-projekt
+# Portfolio Platform
 
+A full-stack portfolio platform with an integrated AI-powered Personality Miner tool.
 
-## Beskrivning
-Portfolion presenterar mina färdigheter och tidigare projekt. Implementerat tekniker för att skapa en personlig och responsiv webbsida/portfolio som fungerar bra på både stationära datorer och mobila enheter.
+## Tech Stack
 
-## FIGMA och Domän
+- **Frontend**: Next.js 14 (App Router), React 18, Tailwind CSS
+- **Backend**: Next.js API Routes
+- **Database**: PostgreSQL with Drizzle ORM
+- **Auth**: Lucia v3 with Argon2 password hashing
+- **Encryption**: AES-256-GCM for user data at rest
+- **LLM**: Llama 3.1:8B via Ollama (local) or vLLM (production)
+- **Monorepo**: Turborepo + pnpm workspaces
 
-- https://larsin.se
-- https://www.figma.com/design/Wc41U660ACrWKfkP9kzZUV/Untitled?node-id=0-1&p=f&t=AMJCSK86fAaX9f43-0
+## Project Structure
 
-## Struktur & Tekniker
-### HTML-struktur
-- **Responsivt meny-system** med en hamburgermeny för mobiler.
-- **Modal-fönster** som används för att visa ett kontaktformulär.
-- **Kortlayout** för projektpresentation.
-- **Ikonbibliotek** från Font Awesome för att visa sociala medier och tekniska kompetenser.
-- **Favicons** som anpassas för olika enheter och visar en logga i fliken.
-- **Google Fonts** används för att ge en personlig touch.
-- **SKärmläsare** För att kunna läsa menyn när den inte syns som text på sidan.
-    ```html
-    <span class="sr-only">Meny</span> <!-- Text för skärmläsare -->
-### CSS-tekniker
-- **Flexbox & Grid**:
-    ```css
-    .about-images {
-      display: grid; /* Skapar grid-layout */
-      grid-template-columns: repeat(3, 1fr); /* 3 kolumner */
-    }
+```
+portfolio-platform/
+├── apps/
+│   └── web/              # Next.js frontend + API
+├── packages/
+│   ├── db/               # Drizzle schema & database client
+│   ├── crypto/           # AES-256-GCM encryption utilities
+│   └── pm-core/          # Personality Miner core logic & prompts
+├── training/             # ML training pipeline (Python)
+├── docker-compose.yml    # Local Postgres + Ollama
+└── turbo.json           # Turborepo configuration
+```
 
-    .skills-icons {
-      display: flex; /* Flexbox för ikonerna */
-      flex-wrap: wrap; /* Radbrytning vid behov*/
-    }
-    ```
+## Getting Started
 
-- **Responsiv Design**:
-    - **Media Queries** för att anpassa layouten till olika skärmstorlekar.
-    - **clamp()** för dynamisk textstorlek:
-    ```css
-    .logo {
-      font-size: clamp(1.25rem, 4vw + 0.5rem, 2rem);
-    }
-    ```
+### Prerequisites
 
-- **Animeringar**:
-    - Hover-effekter med `transition` och dynamisk feedback på ikoner:
-    ```css
-    .skill i {
-      transition: transform 0.3s ease;
-    }
-    .skill:hover i {
-      transform: scale(1.2); /* Förstoringseffekt */
-    }
-    ```
+- Node.js 20+
+- pnpm 9+
+- Docker & Docker Compose
 
-### JavaScript-funktionalitet
-- **Mobilmeny**:
-    - Lägg till eller ta bort klassen 'show' för att visa eller dölja menyn:
-    ```javascript
-    menuButton.addEventListener('click', () => {
-      nav.classList.toggle('show'); // Lägger till/tar bort klassen 'show'
-    });
-    ```
+### Setup
 
-- **Modal-fönster**:
-    - Visar och döljer kontaktformuläret, stängs genom att klicka utanför modal-fönstret.
-    - Enkel formulärhantering som förhindrar standardskickning och ger feedback:
-    ```javascript
-    form.addEventListener('submit', (e) => {
-      e.preventDefault(); // Förhindrar standardskickning
-      alert('Tack!'); // Enkel feedback
-    });
+1. **Clone and install dependencies**:
+   ```bash
+   pnpm install
+   ```
 
-- **Skapare Email**
-    - skapare: Tommy Larsin
-    - email: tommy.larsin@hotmail.com
+2. **Start local services**:
+   ```bash
+   docker compose up -d
+   ```
+
+3. **Set up environment**:
+   ```bash
+   cp apps/web/.env.example apps/web/.env.local
+   ```
+
+4. **Run database migrations**:
+   ```bash
+   pnpm db:push
+   ```
+
+5. **Pull Llama model** (optional, for AI features):
+   ```bash
+   docker exec -it portfolio-ollama ollama pull llama3.1:8b
+   ```
+
+6. **Start development server**:
+   ```bash
+   pnpm dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000)
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start development servers |
+| `pnpm build` | Build all packages and apps |
+| `pnpm lint` | Run Biome linter |
+| `pnpm format` | Format code with Biome |
+| `pnpm test` | Run tests |
+| `pnpm db:generate` | Generate Drizzle migrations |
+| `pnpm db:push` | Push schema to database |
+| `pnpm db:studio` | Open Drizzle Studio |
+
+## Security
+
+- All Personality Miner data is encrypted with AES-256-GCM
+- Per-user encryption keys derived from password + unique salt
+- Keys are never stored; derived at runtime
+- HTTPS enforced in production
+- Rate limiting on LLM endpoints
+
+## License
+
+Private - All rights reserved
+
